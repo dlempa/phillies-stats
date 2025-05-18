@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # ─── Page Setup ──────────────────────────────────────────────────────────────
-
+st.set_page_config(page_title="Home Run Stats", page_icon="🏠")
 st.title("Phillies Fun Stats")
 st.subheader("10 Longest Homeruns of the 2025 Season")
 st.write("Updated automatically each day after games are completed.")
