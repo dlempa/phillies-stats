@@ -68,7 +68,13 @@ if __name__ == "__main__":
     today = date.today().isoformat()
     start = f"{date.today().year}-03-28"
     schedule = load_schedule(143, start, today)
-    df = collect_homeruns(schedule, 143)
+    df_all = collect_homeruns(schedule, 143)
 
+    # Save all homeruns
     os.makedirs("data", exist_ok=True)
-    df.to_csv("data/homeruns.csv", index=False)
+    df_all.to_csv("data/homeruns_all.csv", index=False)
+
+    # Also save top 10 longest
+    df_top10 = df_all.nlargest(10, 'Distance').reset_index(drop=True)
+    df_top10['Distance'] = df_top10['Distance'].round().astype(int)
+    df_top10.to_csv("data/homeruns_top10.csv", index=False)
