@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Phillies Stats", page_icon="assets/primary_logo_on_white_color.png", layout="centered")
 
-col1, col2 = st.columns([2, 3])  # adjust width ratio as needed
+col1, col2 = st.columns([1, 5])  # adjust width ratio as needed
 
 with col1:
     st.image("assets/primary_logo_on_white_color.png", width=50)
