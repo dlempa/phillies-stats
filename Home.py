@@ -11,7 +11,7 @@ with col2:
     st.title("Phillies Stats Dashboard")
 
 st.markdown("Welcome to the Phillies Stats App! Navigate through the sidebar or links below to explore different statistics.")
-st.markdown("### Explore Pages")
+st.markdown("#### Explore Pages")
 st.page_link("pages/Home_Runs.py",label="➡️ Home Runs")
 
 
