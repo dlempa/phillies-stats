@@ -26,7 +26,7 @@ jobs:
           pip install pandas requests mlb-statsapi
 
       - name: Run update script
-        run: python generate_homerun_data.py
+        run: python scripts/generate_homerun_data.py
 
       - name: Commit and push updated data
         run: |
