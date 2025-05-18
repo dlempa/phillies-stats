@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Phillies Stats", page_icon="⚾", layout="centered")
+st.set_page_config(page_title="Phillies Stats", page_icon="assets/primary_logo_on_white_color.png", layout="centered")
 
 st.title("⚾ Phillies Stats Dashboard")
 st.markdown("Welcome to the Phillies Stats App! Navigate through the sidebar to explore different statistics.")
