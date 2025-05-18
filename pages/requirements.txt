@@ -1,0 +1,4 @@
+MLB-StatsAPI
+streamlit
+pandas
+requests
