@@ -12,7 +12,7 @@ with col2:
 
 st.markdown("Welcome to the Phillies Stats App! Navigate through the sidebar to explore different statistics.")
 
-
+st.page_link("pages/Home_Runs.py",label="Home Runs")
 
 
 st.sidebar.success("Select a page above.")
