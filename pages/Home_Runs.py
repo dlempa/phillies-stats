@@ -17,9 +17,9 @@ st.write("Updated automatically each day after games are completed.")
 st.subheader("10 Longest Homeruns of the 2025 Season")
 csv_top10 = "data/homeruns_top10.csv"
 
-if os.path.exists(csv_path):
-    # Load data
-    df = pd.read_csv(csv_path)
+if os.path.exists(csv_top10) and os.path.exists(csv_all):
+    df_top10 = pd.read_csv(csv_top10)
+    df_all = pd.read_csv(csv_all)
 
     # Create HTML table
     html = df.to_html(index=False)
