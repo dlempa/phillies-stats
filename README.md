@@ -2,7 +2,7 @@
 
 A Streamlit web app that fetches, processes, and visualizes statistics related to the Philadelphia Phillies' 2025 MLB season. The app currently focuses on home run data but is built to support future expansions into other performance and game metrics.
 
-🚀 Features
+## 🚀 Features
 
 Top 10 Longest Home Runs: Cleanly styled HTML table showing the longest home runs by total distance.
 
@@ -10,7 +10,7 @@ Interactive Timeline: Altair chart plotting Phillies home runs over time, colore
 
 Automatic Daily Updates: GitHub Actions workflow runs nightly to fetch updated data and regenerate static CSVs.
 
-🧱 Tech Stack
+## 🧱 Tech Stack
 
 Python 3.10+
 
@@ -22,10 +22,10 @@ Altair (for visualization)
 
 GitHub Actions (for automation)
 
-📁 Project Structure
+## 📁 Project Structure
 
 
-🛠 Local Development
+## 🛠 Local Development
 
 Clone the repo:
 
@@ -45,7 +45,7 @@ Run the Streamlit app:
 
 streamlit run pages/1_Home_Runs.py
 
-🤖 GitHub Actions Automation
+## 🤖 GitHub Actions Automation
 
 The GitHub Actions workflow (.github/workflows/update-data.yml) runs once per day to:
 
@@ -60,11 +60,11 @@ Commit and push updates to the repo
 You can also manually run the workflow from the GitHub UI (Actions tab).
 
 
-🔮 Planned Expansions
+## 🔮 Planned Expansions
 
 TBD
 
-📎 Acknowledgments
+## 📎 Acknowledgments
 
 This project uses the following data sources:
 
