@@ -30,6 +30,7 @@ if os.path.exists(csv_top10) and os.path.exists(csv_all):
     updated = datetime.fromtimestamp(os.path.getmtime(csv_top10), ZoneInfo("America/New_York"))
     st.caption(f"📅 Last updated: {updated.strftime('%B %d, %Y at %I:%M %p EST')}")
 
+    st.divider()
     # ─── Timeline Chart ─────────────────────────────────────────────────────
     st.subheader("📈 Homerun Visualization")
 
