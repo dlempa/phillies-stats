@@ -1,4 +1,4 @@
-#Phillies Stats Tracker
+# Phillies Stats Tracker
 
 A Streamlit web app that fetches, processes, and visualizes statistics related to the Philadelphia Phillies' 2025 MLB season. The app currently focuses on home run data but is built to support future expansions into other performance and game metrics.
 
