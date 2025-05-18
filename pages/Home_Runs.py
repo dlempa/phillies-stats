@@ -5,12 +5,15 @@ from datetime import datetime
 
 # ─── Page Setup ──────────────────────────────────────────────────────────────
 st.set_page_config(page_title="Home Run Stats", page_icon="🏠")
-st.title("Phillies Fun Stats")
-st.subheader("10 Longest Homeruns of the 2025 Season")
+st.title("Home Run Stats")
 st.write("Updated automatically each day after games are completed.")
 
-# ─── Load and Display Data ───────────────────────────────────────────────────
 
+
+
+
+# ─── Load and Display Data for Longest Homeruns of 2025 Season ───────────────────────────────────────────────────
+st.subheader("10 Longest Homeruns of the 2025 Season")
 csv_path = "data/homeruns.csv"
 
 if os.path.exists(csv_path):
@@ -23,9 +26,3 @@ if os.path.exists(csv_path):
 
     # Show styled table
     st.markdown(html, unsafe_allow_html=True)
-
-    # Show last updated timestamp
-    updated = datetime.fromtimestamp(os.path.getmtime(csv_path))
-    st.caption(f"📅 Last updated: {updated.strftime('%B %d, %Y at %I:%M %p')}")
-else:
-    st.warning("Data is not available yet. Please check back soon!")
