@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
+import altair as alt
 
 # ─── Page Setup ──────────────────────────────────────────────────────────────
 st.set_page_config(page_title="Home Run Stats", page_icon="🏠")
