@@ -27,7 +27,8 @@ def collect_homeruns(schedule: list[dict], team_id: int) -> pd.DataFrame:
     for g in schedule:
         pk = g.get('gamePk')
         feed = get_game_feed(pk)
-        if not feed: continue
+        if not feed:
+            continue
 
         is_home = g['teams']['home']['team']['id'] == team_id
         opp = g['teams']['away']['team']['name'] if is_home else g['teams']['home']['team']['name']
@@ -42,13 +43,16 @@ def collect_homeruns(schedule: list[dict], team_id: int) -> pd.DataFrame:
                 continue
 
             hit_event = next((e for e in play.get('playEvents', []) if 'hitData' in e), None)
-            if not hit_event: continue
+            if not hit_event:
+                continue
 
             dist = hit_event['hitData'].get('totalDistance')
-            if dist is None: continue
+            if dist is None:
+                continue
 
             hitter = play.get('matchup', {}).get('batter', {}).get('fullName', '')
-            if not hitter: continue
+            if not hitter:
+                continue
 
             rows.append({
                 'Hitter': hitter,
@@ -59,10 +63,7 @@ def collect_homeruns(schedule: list[dict], team_id: int) -> pd.DataFrame:
             })
 
     df = pd.DataFrame(rows)
-    if not df.empty:
-        df = df.nlargest(10, 'Distance').reset_index(drop=True)
-        df['Distance'] = df['Distance'].round().astype(int)
-    return df
+    return df  # ← no filtering here
 
 if __name__ == "__main__":
     today = date.today().isoformat()
@@ -70,11 +71,12 @@ if __name__ == "__main__":
     schedule = load_schedule(143, start, today)
     df_all = collect_homeruns(schedule, 143)
 
-    # Save all homeruns
     os.makedirs("data", exist_ok=True)
+
+    # Save all homeruns
     df_all.to_csv("data/homeruns_all.csv", index=False)
 
-    # Also save top 10 longest
+    # Save top 10 longest
     df_top10 = df_all.nlargest(10, 'Distance').reset_index(drop=True)
     df_top10['Distance'] = df_top10['Distance'].round().astype(int)
     df_top10.to_csv("data/homeruns_top10.csv", index=False)
