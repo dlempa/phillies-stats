@@ -56,7 +56,7 @@ def collect_homeruns(schedule: list[dict], team_id: int) -> pd.DataFrame:
 
             rows.append({
                 'Hitter': hitter,
-                'Date': g['gameDate'][:10],
+                'Date': g['officialDate'],
                 'Distance': dist,
                 'Ballpark': venue,
                 'Opponent': opp
